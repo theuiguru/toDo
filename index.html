@@ -9,8 +9,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function() {
-  var item = $('#item').val(),
-      items = $('#items');
-  items.on('change', function() { });
+  $('#todoAdd').click(function() {
+    var item = $('#todoItem').val();
+    $('#items').append('<li>' + item + '</li>');
+  });
 });
 </script></body></html>
