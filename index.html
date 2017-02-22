@@ -11,7 +11,7 @@
 $(function() {
   $('#todoAdd').click(function() {
     var item = $('#todoItem').val();
-    $('#items').append('<li>' + item + '</li>');
+    $('#items').append('<li>' + item + '<input type="button" class="delete" value="Delete"/></li>');
   });
 });
 </script></body></html>
