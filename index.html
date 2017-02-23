@@ -13,5 +13,8 @@ $(function() {
     var item = $('#todoItem').val();
     $('#items').append('<li>' + item + '<input type="button" class="delete" value="Delete"/></li>');
   });
+  $('.delete').on('click', function() {
+    $('.todoItem').remove();
+  });
 });
 </script></body></html>
