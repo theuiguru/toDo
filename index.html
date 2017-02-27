@@ -9,13 +9,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function() {
-  $('#toDoAdd').click(function() {
+  $('.toDoAdd').click(function() {
     var item = $('#toDoItem').val();
-    item.attr('required', 'required');
     $('#items').append('<li>' + item + '<input type="button" class="delete" value="Delete"/></li>');
-  });
-  $('.delete').on('click', '.delete', function() {
-    $('.toDoItem').remove();
   });
 });
 </script></body></html>
