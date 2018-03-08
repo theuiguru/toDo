@@ -1,5 +1,5 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>todo list</title><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/><style type="text/css"></style></head><body>
-<h1>to-do list</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>toDo list</title><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/><style type="text/css"></style></head><body>
+<h1>toDo list</h1>
 <form id="todoForm">
   <input id="todoInput">
   <button type="button" class="btn btn-info" onclick="todoList();">+</button>
@@ -12,5 +12,13 @@ function todoList() {
   var newItem = document.createElement("li");
   newItem.appendChild(text);
   document.getElementById("todoList").appendChild(newItem);
+  var removeTask = document.createElement('input');
+  removeTask.setAttribute('type', 'button');
+  removeTask.setAttribute("value", "x");
+  removeTask.setAttribute("class", "btn btn-danger remove");
+  removeTask.addEventListener('click', function(e) {
+    newItem.parentNode.removeChild(newItem);
+  }, false);
+  newItem.appendChild(removeTask);
 }
 </script></body></html>
