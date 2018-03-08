@@ -5,6 +5,12 @@
   <button type="button" onclick="todoList();">Submit</button>
 </form><ol id="todoList"></ol>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
-<script type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script><script type="text/javascript">
+function todoList() {
+  var item = document.getElementById("todoInput").value;
+  var text = document.createTextNode(item);
+  var newItem = document.createElement("li");
+  newItem.appendChild(text);
+  document.getElementById("todoList").appendChild(newItem);
+}
 </script></body></html>
