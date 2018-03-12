@@ -23,5 +23,6 @@ function todoList() {
     newItem.parentNode.removeChild(newItem);
   }, false);
   newItem.appendChild(removeTask);
+  $("#todoForm").submit(function() { return false; });
 }
 </script></body></html>
