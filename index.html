@@ -1,10 +1,10 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>toDo list</title><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/><style type="text/css">
 #todoInput {padding:10px; border:1px solid transparent; background-color:#f0f0f0; transition:border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;}
 #todoInput:focus {background:#fff; border-color:#00E676; border-width:2px; outline:0;}
-</style></head><body>
-<h1>toDo list</h1>
+label {color:#ff0000;}
+</style></head><body><h1>toDo list</h1>
 <form id="todoForm">
-  <input id="todoInput">
+  <input id="todoInput"><label></label>
   <button type="submit" class="btn btn-lg btn-info" onclick="todoList();">+</button>
 </form><ol id="todoList"></ol>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
@@ -12,17 +12,22 @@
 function todoList() {
   var item = document.getElementById("todoInput").value;
   var text = document.createTextNode(item);
-  var newItem = document.createElement("li");
-  newItem.appendChild(text);
-  document.getElementById("todoList").appendChild(newItem);
-  var removeTask = document.createElement('input');
-  removeTask.setAttribute('type', 'button');
-  removeTask.setAttribute("value", "x");
-  removeTask.setAttribute("class", "btn btn-danger remove");
-  removeTask.addEventListener('click', function(e) {
-    newItem.parentNode.removeChild(newItem);
-  }, false);
-  newItem.appendChild(removeTask);
+  if(item) {
+    var newItem = document.createElement("li");
+    newItem.appendChild(text);
+    document.getElementById("todoList").appendChild(newItem);
+    var removeTask = document.createElement('input');
+    document.querySelector('label').innerHTML = '';
+    removeTask.setAttribute('type', 'button');
+    removeTask.setAttribute("value", "x");
+    removeTask.setAttribute("class", "btn btn-danger remove");
+    removeTask.addEventListener('click', function(e) {
+      newItem.parentNode.removeChild(newItem);
+    }, false);
+    newItem.appendChild(removeTask);
+  } else {
+    document.querySelector('label').innerHTML = '*';
+  }
   $("#todoForm").submit(function() { return false; });
 }
 </script></body></html>
