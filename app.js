@@ -16,3 +16,15 @@ function createItem(x) {
 function deleteItem(elementToDelete) {
   elementToDelete.parentElement.remove();
 }
+
+function validate(e) {
+  e.preventDefault();
+  var fullName = document.getElementById("fullNae").value;
+  if(fullName) {
+    document.querySelector('label').innerHTML = '';
+    document.getElementById('fullName').value = fullName;
+  } else {
+    document.querySelector('label').innerHTML = '*';
+  }
+  return false;
+}
