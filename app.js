@@ -19,10 +19,10 @@ function deleteItem(elementToDelete) {
 
 function validate(e) {
   e.preventDefault();
-  var fullName = document.getElementById("fullNae").value;
-  if(fullName) {
+  var item = document.getElementById("item").value;
+  if(item) {
     document.querySelector('label').innerHTML = '';
-    document.getElementById('fullName').value = fullName;
+    document.getElementById('fullName').value = item;
   } else {
     document.querySelector('label').innerHTML = '*';
   }
