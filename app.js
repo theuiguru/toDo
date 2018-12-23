@@ -18,13 +18,13 @@ function deleteItem(elementToDelete) {
 }
 
 function validate(e) {
-  e.preventDefault();
-  var item = document.getElementById("item").value;
-  if(item) {
+  var ourField = document.getElementById("ourField").value;
+  var ourList = document.getElementById("ourList");
+  if(ourField) {
     document.querySelector('label').innerHTML = '';
-    document.getElementById('fullName').value = item;
+    document.getElementById('ourField').value = ourField;
   } else {
     document.querySelector('label').innerHTML = '*';
   }
-  return false;
+  $("#ourForm").submit(function() { return false; });
 }

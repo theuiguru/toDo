@@ -1,5 +1,29 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>To-Do App</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></head><body>
+<title>To-Do App</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><style type="text/css">
+label {color:#ff0000;}
+input {padding:10px;}
+#ourField {border: 1px solid transparent; background-color:#dedede; transition:border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;}
+#ourField:focus {border-color:#00E676; border-width:2px; outline:0;}
+</style></head><body>
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">ToDo</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <h1>To-Do App</h1>
     <form id="ourForm">
@@ -8,8 +32,9 @@
         <span class="input-group-btn"><button class="btn btn-success">Create Item</button></span>
       </div>
     </form>
-
-    <h3>Need To Do</h3>
+    <hr>
     <ul id="ourList"></ul>
   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="app.js"></script></body></html>
