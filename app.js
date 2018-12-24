@@ -19,7 +19,6 @@ function deleteItem(elementToDelete) {
 
 function validate(e) {
   var ourField = document.getElementById("ourField").value;
-  var ourList = document.getElementById("ourList");
   if(ourField) {
     document.querySelector('label').innerHTML = '';
     document.getElementById('ourField').value = ourField;
