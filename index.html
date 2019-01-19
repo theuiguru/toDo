@@ -27,8 +27,8 @@ input {padding:10px;}
     <h1>To-Do App</h1>
     <form id="ourForm">
       <div class="input-group">
-        <input id="ourField" class="form-control" type="text" autocomplete="off">
-        <span class="input-group-btn"><button class="btn btn-success">Create Item</button></span>
+        <input type="text" name="ourField" id="ourField" size="31" class="form-control"  value="Enter a task item(s)" onFocus="if (this.value=='Enter a task item(s)') { this.value='' };" onBlur="if (this.value=='') { this.value='Enter a task item(s)' };" autocomplete="off">
+        <span class="input-group-btn"><button type="submit" class="btn btn-success" onClick="return checkInput();">Create Item</button></span>
       </div>
     </form>
     <hr>

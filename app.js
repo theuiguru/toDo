@@ -1,3 +1,18 @@
+function checkInput() {
+  var val = document.getElementById("ourField").value
+  if (val == "Enter a task item(s)") {
+    alert("Please enter a task item");
+    return false;
+  }
+  else if (val == "") {
+    alert("Please enter a task item");
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+
 let ourForm = document.getElementById("ourForm");
 let ourField = document.getElementById("ourField");
 let ourList = document.getElementById("ourList");
@@ -15,15 +30,4 @@ function createItem(x) {
 
 function deleteItem(elementToDelete) {
   elementToDelete.parentElement.remove();
-}
-
-function validate(e) {
-  var ourField = document.getElementById("ourField").value;
-  if(ourField) {
-    document.querySelector('label').innerHTML = '';
-    document.getElementById('ourField').value = ourField;
-  } else {
-    document.querySelector('label').innerHTML = '*';
-  }
-  $("#ourForm").submit(function() { return false; });
 }
