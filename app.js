@@ -1,18 +1,3 @@
-function checkInput() {
-  var val = document.getElementById("ourField").value
-  if (val == "Enter a task item(s)") {
-    alert("Please enter a task item");
-    return false;
-  }
-  else if (val == "") {
-    alert("Please enter a task item");
-    return false;
-  }
-  else {
-    return true;
-  }
-}
-
 let ourForm = document.getElementById("ourForm");
 let ourField = document.getElementById("ourField");
 let ourList = document.getElementById("ourList");
@@ -30,4 +15,18 @@ function createItem(x) {
 
 function deleteItem(elementToDelete) {
   elementToDelete.parentElement.remove();
+}
+
+function checkInput() {
+  if (ourField.value == "Enter a task item(s)") {
+    alert("Please enter a task item");
+    return false;
+  }
+  else if (ourField.value == "") {
+    alert("Please enter a task item");
+    return false;
+  }
+  else {
+    return true;
+  }
 }
